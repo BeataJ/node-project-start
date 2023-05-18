@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 const express = require('express');
@@ -5,6 +6,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res)  => {
   const htmlFilePath = path.join(__dirname, "views", "index.html");
@@ -17,8 +19,22 @@ app.get('/restaurants', (req,res) => {
 });
 
 app.get("/recommend", (req, res) => {
-  const htmlFilePath = path.join(__dirname, "views", "recommend.html");
-  res.sendFile(htmlFilePath);
+  const htmlFildePath = path.join(__dirname, "views", "recommend.html");
+  res.sendFile(htmlFildePath);
+});
+
+app.post("/recommend", (req,res) => {
+  const restaurant= req.body;
+  const filePath = path.join(__dirname, 'data', 'restaurants.json');
+
+  const fielData = fs.readFileSync(filePath);
+  const storeRestaurants = JSON.parse(fielData);
+
+  storeRestaurants.push(restaurant);
+
+  fs.writeFileSync(filePath, JSON.stringify(storeRestaurants));
+
+  res.redirect('/confirm')
 });
 
 app.get("/confirm", (req, res) => {
@@ -30,5 +46,6 @@ app.get("/about", (req, res) => {
   const htmlFilePath = path.join(__dirname, "views", "about.html");
   res.sendFile(htmlFilePath);
 });
+
 
 app.listen(3000);

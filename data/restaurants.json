@@ -1,0 +1,16 @@
+[
+  {
+    "name": "test",
+    "address": "123test St testland",
+    "cuisine": "tesla",
+    "website": "https://test.com",
+    "description": "It's awesome!"
+  },
+  {
+    "name": "test2",
+    "address": "test2 test2land",
+    "cuisine": "india",
+    "website": "https://india.ca",
+    "description": "It's also amazing!"
+  }
+]
