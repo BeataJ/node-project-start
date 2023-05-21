@@ -12,18 +12,24 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res)  => {
-  const htmlFilePath = path.join(__dirname, "views", "index.html");
-  res.sendFile(htmlFilePath);
+  res.render('index');
+
+  // const htmlFilePath = path.join(__dirname, "views", "index.html");
+  // res.sendFile(htmlFilePath);
 });
 
 app.get('/restaurants', (req,res) => {
-  const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
-  res.sendFile(htmlFilePath)
+  res.render("restaurants");
+
+  // const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
+  // res.sendFile(htmlFilePath)
 });
 
 app.get("/recommend", (req, res) => {
-  const htmlFildePath = path.join(__dirname, "views", "recommend.html");
-  res.sendFile(htmlFildePath);
+  res.render("recommend");
+
+  // const htmlFildePath = path.join(__dirname, "views", "recommend.html");
+  // res.sendFile(htmlFildePath);
 });
 
 app.post("/recommend", (req,res) => {
@@ -41,13 +47,17 @@ app.post("/recommend", (req,res) => {
 });
 
 app.get("/confirm", (req, res) => {
-  const htmlFilePath = path.join(__dirname, "views", "confirm.html");
-  res.sendFile(htmlFilePath);
+res.render("confirm");
+
+  // const htmlFilePath = path.join(__dirname, "views", "confirm.html");
+  // res.sendFile(htmlFilePath);
 });
 
 app.get("/about", (req, res) => {
-  const htmlFilePath = path.join(__dirname, "views", "about.html");
-  res.sendFile(htmlFilePath);
+  res.render("about");
+
+  // const htmlFilePath = path.join(__dirname, "views", "about.html");
+  // res.sendFile(htmlFilePath);
 });
 
 
