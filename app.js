@@ -19,7 +19,7 @@ app.get('/', (req, res)  => {
 });
 
 app.get('/restaurants', (req,res) => {
-  res.render("restaurants");
+  res.render("restaurants", { numberOfRestaurants: 2 });
 
   // const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
   // res.sendFile(htmlFilePath)
