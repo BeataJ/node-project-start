@@ -12,5 +12,12 @@
     "cuisine": "india",
     "website": "https://india.ca",
     "description": "It's also amazing!"
+  },
+  {
+    "name": "Restaurant 3",
+    "address": "Nice strret 333",
+    "cuisine": "german",
+    "website": "https://goodboy",
+    "description": "boy of boys"
   }
 ]

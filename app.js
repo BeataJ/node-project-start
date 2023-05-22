@@ -1,25 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-app.use(express.static('public'));
-app.use(express.urlencoded({extended: false}));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/', (req, res)  => {
-  res.render('index');
+app.get("/", (req, res) => {
+  res.render("index");
 
   // const htmlFilePath = path.join(__dirname, "views", "index.html");
   // res.sendFile(htmlFilePath);
 });
 
-app.get('/restaurants', (req,res) => {
-  res.render("restaurants", { numberOfRestaurants: 2 });
+app.get("/restaurants", (req, res) => {
+  const filePath = path.join(__dirname, "data", "restaurants.json");
+
+  const fielData = fs.readFileSync(filePath);
+  const storedRestaurants = JSON.parse(fielData);
+
+  res.render("restaurants", { numberOfRestaurants: storedRestaurants.length });
 
   // const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
   // res.sendFile(htmlFilePath)
@@ -32,22 +37,22 @@ app.get("/recommend", (req, res) => {
   // res.sendFile(htmlFildePath);
 });
 
-app.post("/recommend", (req,res) => {
-  const restaurant= req.body;
-  const filePath = path.join(__dirname, 'data', 'restaurants.json');
+app.post("/recommend", (req, res) => {
+  const restaurant = req.body;
+  const filePath = path.join(__dirname, "data", "restaurants.json");
 
   const fielData = fs.readFileSync(filePath);
-  const storeRestaurants = JSON.parse(fielData);
+  const storedRestaurants = JSON.parse(fielData);
 
-  storeRestaurants.push(restaurant);
+  storedRestaurants.push(restaurant);
 
-  fs.writeFileSync(filePath, JSON.stringify(storeRestaurants));
+  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
 
-  res.redirect('/confirm')
+  res.redirect("/confirm");
 });
 
 app.get("/confirm", (req, res) => {
-res.render("confirm");
+  res.render("confirm");
 
   // const htmlFilePath = path.join(__dirname, "views", "confirm.html");
   // res.sendFile(htmlFilePath);
@@ -59,6 +64,5 @@ app.get("/about", (req, res) => {
   // const htmlFilePath = path.join(__dirname, "views", "about.html");
   // res.sendFile(htmlFilePath);
 });
-
 
 app.listen(3000);
