@@ -52,6 +52,7 @@
       <p>Find your next favorite restaurants with help of our other users!</p>
       <p>We found <%= numberOfRestaurants %> restaurants.</p>
       <ul id="restaurants-list">
+        <% for(const restaurant of restaurants) { %>
         <li class="restaurant-item">
           <article>
             <h2>Restaurant Title</h2>
@@ -67,6 +68,7 @@
             </div>
           </article>
         </li>
+        <% } %>
   
       </ul>
     </main>
