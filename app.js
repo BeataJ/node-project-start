@@ -24,7 +24,10 @@ app.get("/restaurants", (req, res) => {
   const fielData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fielData);
 
-  res.render("restaurants", { numberOfRestaurants: storedRestaurants.length });
+  res.render("restaurants", {
+    numberOfRestaurants: storedRestaurants.length,
+    restaurants: storedRestaurants,
+  });
 
   // const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
   // res.sendFile(htmlFilePath)
