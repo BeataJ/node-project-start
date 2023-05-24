@@ -33,6 +33,11 @@ app.get("/restaurants", (req, res) => {
   // res.sendFile(htmlFilePath)
 });
 
+app.get('/restaurants/:id', (req,res) => {
+  const restaurantId =  req.params.id;
+  res.render("restaurants-detail", { rid: restaurantId });
+})
+
 app.get("/recommend", (req, res) => {
   res.render("recommend");
 
