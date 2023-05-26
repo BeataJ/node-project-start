@@ -1,5 +1,6 @@
 [
   {
+    "id": "r1",
     "name": "test",
     "address": "123test St testland",
     "cuisine": "tesla",
@@ -7,6 +8,7 @@
     "description": "It's awesome!"
   },
   {
+    "id": "r2",
     "name": "test2",
     "address": "test2 test2land",
     "cuisine": "india",
@@ -14,10 +16,19 @@
     "description": "It's also amazing!"
   },
   {
+    "id": "r3",
     "name": "Restaurant 3",
     "address": "Nice strret 333",
     "cuisine": "german",
     "website": "https://goodboy",
     "description": "boy of boys"
+  },
+  {
+    "name": "Ma Ma",
+    "address": "kocia 13",
+    "cuisine": "kitten miaw",
+    "website": "https://mew.mew",
+    "description": "mew",
+    "id": "0a3fea93-039e-45f9-a9f3-f0886b2b835c"
   }
 ]
