@@ -71,7 +71,7 @@ app.post("/recommend", (req, res) => {
 
   fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
 
-  res.redirect("/confirm");
+  res.redirect("confirm");
 });
 
 app.get("/confirm", (req, res) => {
@@ -86,6 +86,10 @@ app.get("/about", (req, res) => {
 
   // const htmlFilePath = path.join(__dirname, "views", "about.html");
   // res.sendFile(htmlFilePath);
+});
+
+app.use((req,res) => {
+  res.render('404');
 });
 
 app.listen(3000);
