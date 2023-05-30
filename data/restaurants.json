@@ -1,1 +1,42 @@
-[{"id":"r1","name":"test","address":"123test St testland","cuisine":"tesla","website":"https://test.com","description":"It's awesome!"},{"id":"r2","name":"test2","address":"test2 test2land","cuisine":"india","website":"https://india.ca","description":"It's also amazing!"},{"id":"r3","name":"Restaurant 3","address":"Nice strret 333","cuisine":"german","website":"https://goodboy","description":"boy of boys"},{"name":"Ma Ma","address":"kocia 13","cuisine":"kitten miaw","website":"https://mew.mew","description":"mew","id":"0a3fea93-039e-45f9-a9f3-f0886b2b835c"},{"name":"bob-boy","address":"bbbbbbbkkkkk","cuisine":"polish","website":"https://iii.com","description":"//////","id":"40227209-3b96-4b66-998c-67a8a2de0fbb"}]
+[
+  {
+    "id": "r1",
+    "name": "Test",
+    "address": "123test St testland",
+    "cuisine": "tesla",
+    "website": "https://test.com",
+    "description": "It's awesome!"
+  },
+  {
+    "id": "r2",
+    "name": "Test2",
+    "address": "test2 test2land",
+    "cuisine": "india",
+    "website": "https://india.ca",
+    "description": "It's also amazing!"
+  },
+  {
+    "id": "r3",
+    "name": "Restaurant 3",
+    "address": "Nice strret 333",
+    "cuisine": "german",
+    "website": "https://goodboy",
+    "description": "boy of boys"
+  },
+  {
+    "name": "Ma Ma",
+    "address": "kocia 13",
+    "cuisine": "kitten miaw",
+    "website": "https://mew.mew",
+    "description": "mew",
+    "id": "0a3fea93-039e-45f9-a9f3-f0886b2b835c"
+  },
+  {
+    "name": "Bob-boy",
+    "address": "bbbbbbbkkkkk",
+    "cuisine": "polish",
+    "website": "https://iii.com",
+    "description": "//////",
+    "id": "40227209-3b96-4b66-998c-67a8a2de0fbb"
+  }
+]
